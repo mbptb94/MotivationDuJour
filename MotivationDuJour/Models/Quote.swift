@@ -1,10 +1,3 @@
-//
-//  Quote.swift
-//  MotivationDuJour
-//
-//  Created by Yoann TOURTELLIER on 06/12/2024.
-//
-
 import Foundation
 
 struct Quote: Decodable {
@@ -20,5 +13,26 @@ class QuoteLoader {
             return []
         }
         return quotes
+    }
+}
+
+extension Quote {
+    // Propriété calculée pour vérifier si la citation est un favori
+    var isFavorite: Bool {
+        get {
+            let favoriteQuotes = UserDefaults.standard.stringArray(forKey: "favoriteQuotes") ?? []
+            return favoriteQuotes.contains(quote)
+        }
+        set {
+            var favoriteQuotes = UserDefaults.standard.stringArray(forKey: "favoriteQuotes") ?? []
+            if newValue {
+                if !favoriteQuotes.contains(quote) {
+                    favoriteQuotes.append(quote)
+                }
+            } else {
+                favoriteQuotes.removeAll { $0 == quote }
+            }
+            UserDefaults.standard.set(favoriteQuotes, forKey: "favoriteQuotes")
+        }
     }
 }
