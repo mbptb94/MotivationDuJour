@@ -2,19 +2,22 @@ import SwiftUI
 
 struct MainView: View {
     @State private var currentQuote: Quote?
+    @State private var isFavorite: Bool = true // Le cœur est toujours rouge
+    @State private var navigateToFavorisView: Bool = false // État pour contrôler la navigation vers FavorisView
+    @State private var favoriteQuotes: [Quote] = [] // Liste des citations favorites
     private let quotes = QuoteLoader.loadQuotes()
 
     var body: some View {
         NavigationView {
             VStack {
                 // Date du jour affichée discrètement
-                               Text(Date.now, style: .date)
-                                   .font(.footnote)
-                                   .foregroundColor(.gray)
-                                   .padding(.bottom, 8)
+                Text(Date.now, style: .date)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.bottom, 8)
 
-                               Spacer()
-                
+                Spacer()
+
                 // Zone pour afficher la citation
                 VStack {
                     if let quote = currentQuote {
@@ -30,9 +33,11 @@ struct MainView: View {
                             .foregroundColor(.gray)
                             .padding(.top, 8)
                         
-                        // Bouton de partage
+                        // HStack pour les boutons de partage et de favoris
                         HStack {
                             Spacer()
+
+                            // Bouton de partage
                             Button(action: {
                                 shareQuote(quote: "“\(quote.quote)” - \(quote.author)")
                             }) {
@@ -40,6 +45,19 @@ struct MainView: View {
                                     .foregroundColor(.blue)
                                     .padding()
                             }
+
+                            // Bouton favori (cœur)
+                            Button(action: {
+                                if let quote = currentQuote {
+                                    favoriteQuotes.append(quote) // Ajoute la citation aux favoris
+                                    navigateToFavorisView = true // Redirige vers FavorisView
+                                }
+                            }) {
+                                Image(systemName: "heart.fill") // Cœur toujours rempli
+                                    .foregroundColor(.red) // Toujours rouge
+                                    .padding()
+                            }
+                            
                             Spacer()
                         }
                         .padding(.top, 8)
@@ -50,9 +68,9 @@ struct MainView: View {
                 }
                 .frame(maxWidth: .infinity, minHeight: 300) // Fixe une hauteur minimale pour éviter que le bouton ne bouge
                 .padding()
-                
+
                 Spacer() // Espace pour maintenir le bouton en bas
-                
+
                 // Bouton pour obtenir une nouvelle citation
                 Button(action: showRandomQuote) {
                     Text("Nouvelle citation")
@@ -68,6 +86,11 @@ struct MainView: View {
             .onAppear(perform: showRandomQuote)
             .padding()
             .navigationTitle("Motivation du Jour") // Titre pour la barre de navigation
+            .background(
+                NavigationLink(destination: FavorisView(favoriteQuotes: $favoriteQuotes), isActive: $navigateToFavorisView) {
+                    EmptyView()
+                }
+            )
         }
     }
 
