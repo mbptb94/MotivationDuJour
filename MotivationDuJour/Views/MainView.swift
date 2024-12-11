@@ -7,7 +7,13 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer()
+                // Date du jour affichée discrètement
+                               Text(Date.now, style: .date)
+                                   .font(.footnote)
+                                   .foregroundColor(.gray)
+                                   .padding(.bottom, 8)
+
+                               Spacer()
                 
                 // Zone pour afficher la citation
                 VStack {
