@@ -2,13 +2,13 @@ import SwiftUI
 
 struct MainView: View {
     @State private var currentQuote: Quote?
-    @State private var isFavorite: Bool = false // État pour gérer le favori
     private let quotes = QuoteLoader.loadQuotes()
 
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
+                
                 // Zone pour afficher la citation
                 VStack {
                     if let quote = currentQuote {
@@ -18,22 +18,25 @@ struct MainView: View {
                             .padding()
                             .multilineTextAlignment(.center)
                         
-                        // Commenté : HStack pour afficher l'auteur et le bouton cœur
-                        /*
+                        // Affichage de l'auteur
+                        Text("- \(quote.author)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .padding(.top, 8)
+                        
+                        // Bouton de partage
                         HStack {
-                            Text("- \(quote.author)")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                            
-                            Button(action: toggleFavorite) {
-                                Image(systemName: isFavorite ? "heart.fill" : "heart")
-                                    .foregroundColor(isFavorite ? .red : .gray)
-                                    .padding(.leading, 8)
+                            Spacer()
+                            Button(action: {
+                                shareQuote(quote: "“\(quote.quote)” - \(quote.author)")
+                            }) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.blue)
+                                    .padding()
                             }
-                            .buttonStyle(BorderlessButtonStyle()) // Permet de mieux gérer les clics dans une HStack
+                            Spacer()
                         }
                         .padding(.top, 8)
-                        */
                     } else {
                         Text("Aucune citation disponible.")
                             .padding()
@@ -41,9 +44,9 @@ struct MainView: View {
                 }
                 .frame(maxWidth: .infinity, minHeight: 300) // Fixe une hauteur minimale pour éviter que le bouton ne bouge
                 .padding()
-
+                
                 Spacer() // Espace pour maintenir le bouton en bas
-
+                
                 // Bouton pour obtenir une nouvelle citation
                 Button(action: showRandomQuote) {
                     Text("Nouvelle citation")
@@ -64,13 +67,21 @@ struct MainView: View {
 
     private func showRandomQuote() {
         currentQuote = quotes.randomElement()
-        isFavorite = false // Réinitialise le favori lorsque la citation change
     }
 
-    // Commenté : Fonction qui inverse l'état du favori
-    /*
-    private func toggleFavorite() {
-        isFavorite.toggle() // Inverse l'état du favori
+    private func shareQuote(quote: String) {
+        let activityVC = UIActivityViewController(activityItems: [quote], applicationActivities: nil)
+        
+        // Trouver la scène active pour présenter le UIActivityViewController
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let rootViewController = windowScene.windows.first?.rootViewController {
+            rootViewController.present(activityVC, animated: true, completion: nil)
+        }
     }
-    */
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
 }
