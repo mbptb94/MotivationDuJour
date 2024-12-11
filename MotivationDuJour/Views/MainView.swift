@@ -2,10 +2,11 @@ import SwiftUI
 
 struct MainView: View {
     @State private var currentQuote: Quote?
-    @State private var isFavorite: Bool = true // Le cœur est toujours rouge
-    @State private var navigateToFavorisView: Bool = false // État pour contrôler la navigation vers FavorisView
     @State private var favoriteQuotes: [Quote] = [] // Liste des citations favorites
     private let quotes = QuoteLoader.loadQuotes()
+
+    @State private var rotation: Double = 0 // Propriété pour gérer la rotation de la citation
+    @State private var isRotating: Bool = false // Propriété pour contrôler l'état de la rotation
 
     var body: some View {
         NavigationView {
@@ -20,47 +21,69 @@ struct MainView: View {
 
                 // Zone pour afficher la citation
                 VStack {
+                    Spacer()
                     if let quote = currentQuote {
+                        // Affichage de la citation avec animation de rotation
                         Text("“\(quote.quote)”")
                             .font(.title)
                             .fontWeight(.bold)
                             .padding()
                             .multilineTextAlignment(.center)
+                            .rotation3DEffect(
+                                .degrees(rotation),
+                                axis: (x: 0, y: 0, z: 1) // Rotation autour de l'axe Z
+                            )
+                            .animation(.easeInOut(duration: 0.5), value: rotation) // Animation fluide de la rotation
                         
-                        // Affichage de l'auteur
+                        // Affichage de l'auteur avec la même rotation
                         Text("- \(quote.author)")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                             .padding(.top, 8)
+                            .rotation3DEffect(
+                                .degrees(rotation),
+                                axis: (x: 0, y: 0, z: 1) // Rotation autour de l'axe Z pour l'auteur
+                            )
+                            .animation(.easeInOut(duration: 0.5), value: rotation) // Animation fluide de la rotation
                         
-                        // HStack pour les boutons de partage et de favoris
-                        HStack {
-                            Spacer()
+                        Spacer()
 
-                            // Bouton de partage
-                            Button(action: {
-                                shareQuote(quote: "“\(quote.quote)” - \(quote.author)")
-                            }) {
-                                Image(systemName: "square.and.arrow.up")
-                                    .foregroundColor(.blue)
-                                    .padding()
-                            }
+                        // Masquer l'HStack pendant la rotation
+                        if !isRotating {
+                            HStack {
+                                Spacer()
 
-                            // Bouton favori (cœur)
-                            Button(action: {
-                                if let quote = currentQuote {
-                                    favoriteQuotes.append(quote) // Ajoute la citation aux favoris
-                                    navigateToFavorisView = true // Redirige vers FavorisView
+                                // Bouton de partage
+                                Button(action: {
+                                    shareQuote(quote: "“\(quote.quote)” - \(quote.author)")
+                                }) {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .foregroundColor(.blue)
+                                        .padding()
                                 }
-                            }) {
-                                Image(systemName: "heart.fill") // Cœur toujours rempli
-                                    .foregroundColor(.red) // Toujours rouge
-                                    .padding()
+
+                                // Bouton favori (cœur)
+                                Button(action: {
+                                    if let quote = currentQuote {
+                                        favoriteQuotes.append(quote) // Ajoute la citation aux favoris
+                                    }
+                                }) {
+                                    Image(systemName: "heart.fill") // Cœur toujours rempli
+                                        .foregroundColor(.red) // Toujours rouge
+                                        .padding()
+                                }
+
+                                // Bouton de favoris (icône opticaldiscdrive.fill)
+                                NavigationLink(destination: FavorisView(favoriteQuotes: $favoriteQuotes)) {
+                                    Image(systemName: "opticaldiscdrive.fill") // Icône de favoris
+                                        .foregroundColor(.blue)
+                                        .padding()
+                                }
+                                
+                                Spacer()
                             }
-                            
-                            Spacer()
+                            .padding(.top, 8)
                         }
-                        .padding(.top, 8)
                     } else {
                         Text("Aucune citation disponible.")
                             .padding()
@@ -86,16 +109,21 @@ struct MainView: View {
             .onAppear(perform: showRandomQuote)
             .padding()
             .navigationTitle("Motivation du Jour") // Titre pour la barre de navigation
-            .background(
-                NavigationLink(destination: FavorisView(favoriteQuotes: $favoriteQuotes), isActive: $navigateToFavorisView) {
-                    EmptyView()
-                }
-            )
         }
     }
 
     private func showRandomQuote() {
-        currentQuote = quotes.randomElement()
+        // Ajouter une animation lors de la mise à jour de la citation avec une rotation
+        withAnimation {
+            isRotating = true // Démarrer la rotation
+            rotation += 360 // Rotation complète de 360 degrés à chaque nouvelle citation
+        }
+
+        // Attendre la fin de la rotation avant d'afficher la nouvelle citation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            currentQuote = quotes.randomElement()
+            isRotating = false // Fin de la rotation
+        }
     }
 
     private func shareQuote(quote: String) {
