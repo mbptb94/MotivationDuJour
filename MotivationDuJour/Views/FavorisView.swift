@@ -29,3 +29,4 @@ struct FavorisView: View {
         .padding()
     }
 }
+
