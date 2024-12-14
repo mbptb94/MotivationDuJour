@@ -1,0 +1,23 @@
+# Définir la plateforme iOS
+platform :ios, '12.0'
+
+target 'InstantMessenger' do
+  # Utiliser des frameworks dynamiques
+  use_frameworks!
+
+  # Pods pour InstantMessenger
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'  # Si vous utilisez Firebase Storage pour gérer les fichiers
+  pod 'Firebase/Firestore'  # Si vous utilisez Cloud Firestore
+
+  target 'InstantMessengerTests' do
+    inherit! :search_paths
+    # Pods pour les tests
+  end
+
+  target 'InstantMessengerUITests' do
+    # Pods pour les tests UI
+  end
+
+end

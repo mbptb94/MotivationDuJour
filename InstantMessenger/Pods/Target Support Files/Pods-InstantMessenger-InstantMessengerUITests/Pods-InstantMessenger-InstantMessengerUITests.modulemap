@@ -1,0 +1,6 @@
+framework module Pods_InstantMessenger_InstantMessengerUITests {
+  umbrella header "Pods-InstantMessenger-InstantMessengerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

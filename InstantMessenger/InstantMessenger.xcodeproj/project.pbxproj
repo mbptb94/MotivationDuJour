@@ -1,0 +1,732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FE1747680AC6C46DAD02ADC /* Pods_InstantMessenger_InstantMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B7C9405A34DBD7B620010D /* Pods_InstantMessenger_InstantMessengerUITests.framework */; };
+		45347B6E2D0D992900FCD57B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45347B6D2D0D992900FCD57B /* GoogleService-Info.plist */; };
+		D88A643A6274869DDEDB52D8 /* Pods_InstantMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7996346A2EE21C849A3BB9 /* Pods_InstantMessenger.framework */; };
+		F6F50DD7BF52229C61351636 /* Pods_InstantMessengerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B26C5A7FE7247CE8C153D9 /* Pods_InstantMessengerTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45347B512D0D97E700FCD57B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45347B382D0D97E700FCD57B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45347B3F2D0D97E700FCD57B;
+			remoteInfo = InstantMessenger;
+		};
+		45347B5B2D0D97E700FCD57B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45347B382D0D97E700FCD57B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45347B3F2D0D97E700FCD57B;
+			remoteInfo = InstantMessenger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1465DEFD870262F518D7A439 /* Pods-InstantMessenger-InstantMessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantMessenger-InstantMessengerUITests.debug.xcconfig"; path = "Target Support Files/Pods-InstantMessenger-InstantMessengerUITests/Pods-InstantMessenger-InstantMessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2515FF2CB0B595C9D33A8C82 /* Pods-InstantMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantMessenger.debug.xcconfig"; path = "Target Support Files/Pods-InstantMessenger/Pods-InstantMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		34B7C9405A34DBD7B620010D /* Pods_InstantMessenger_InstantMessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstantMessenger_InstantMessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45347B402D0D97E700FCD57B /* InstantMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstantMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45347B502D0D97E700FCD57B /* InstantMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstantMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45347B5A2D0D97E700FCD57B /* InstantMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstantMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45347B6D2D0D992900FCD57B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46729FC76599ACD55B53B43D /* Pods-InstantMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantMessengerTests.release.xcconfig"; path = "Target Support Files/Pods-InstantMessengerTests/Pods-InstantMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B7996346A2EE21C849A3BB9 /* Pods_InstantMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstantMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24BA545C877968547E41D9B /* Pods-InstantMessenger-InstantMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantMessenger-InstantMessengerUITests.release.xcconfig"; path = "Target Support Files/Pods-InstantMessenger-InstantMessengerUITests/Pods-InstantMessenger-InstantMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA30E2896BC44C0CF8D7CFE5 /* Pods-InstantMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantMessenger.release.xcconfig"; path = "Target Support Files/Pods-InstantMessenger/Pods-InstantMessenger.release.xcconfig"; sourceTree = "<group>"; };
+		C0B26C5A7FE7247CE8C153D9 /* Pods_InstantMessengerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstantMessengerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4F3679F6D33CFB4D60A1DB /* Pods-InstantMessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstantMessengerTests.debug.xcconfig"; path = "Target Support Files/Pods-InstantMessengerTests/Pods-InstantMessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		45347B422D0D97E700FCD57B /* InstantMessenger */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InstantMessenger;
+			sourceTree = "<group>";
+		};
+		45347B532D0D97E700FCD57B /* InstantMessengerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InstantMessengerTests;
+			sourceTree = "<group>";
+		};
+		45347B5D2D0D97E700FCD57B /* InstantMessengerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InstantMessengerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45347B3D2D0D97E700FCD57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D88A643A6274869DDEDB52D8 /* Pods_InstantMessenger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45347B4D2D0D97E700FCD57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F50DD7BF52229C61351636 /* Pods_InstantMessengerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45347B572D0D97E700FCD57B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE1747680AC6C46DAD02ADC /* Pods_InstantMessenger_InstantMessengerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45347B372D0D97E700FCD57B = {
+			isa = PBXGroup;
+			children = (
+				45347B422D0D97E700FCD57B /* InstantMessenger */,
+				45347B532D0D97E700FCD57B /* InstantMessengerTests */,
+				45347B5D2D0D97E700FCD57B /* InstantMessengerUITests */,
+				45347B412D0D97E700FCD57B /* Products */,
+				45347B6D2D0D992900FCD57B /* GoogleService-Info.plist */,
+				AE81E010FCEDB58274EC1C1C /* Pods */,
+				7F00AAD0308D919239D49B28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		45347B412D0D97E700FCD57B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45347B402D0D97E700FCD57B /* InstantMessenger.app */,
+				45347B502D0D97E700FCD57B /* InstantMessengerTests.xctest */,
+				45347B5A2D0D97E700FCD57B /* InstantMessengerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F00AAD0308D919239D49B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B7996346A2EE21C849A3BB9 /* Pods_InstantMessenger.framework */,
+				34B7C9405A34DBD7B620010D /* Pods_InstantMessenger_InstantMessengerUITests.framework */,
+				C0B26C5A7FE7247CE8C153D9 /* Pods_InstantMessengerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE81E010FCEDB58274EC1C1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2515FF2CB0B595C9D33A8C82 /* Pods-InstantMessenger.debug.xcconfig */,
+				BA30E2896BC44C0CF8D7CFE5 /* Pods-InstantMessenger.release.xcconfig */,
+				1465DEFD870262F518D7A439 /* Pods-InstantMessenger-InstantMessengerUITests.debug.xcconfig */,
+				A24BA545C877968547E41D9B /* Pods-InstantMessenger-InstantMessengerUITests.release.xcconfig */,
+				CA4F3679F6D33CFB4D60A1DB /* Pods-InstantMessengerTests.debug.xcconfig */,
+				46729FC76599ACD55B53B43D /* Pods-InstantMessengerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45347B3F2D0D97E700FCD57B /* InstantMessenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45347B642D0D97E700FCD57B /* Build configuration list for PBXNativeTarget "InstantMessenger" */;
+			buildPhases = (
+				60AE87BDFE837D8824CB4FDD /* [CP] Check Pods Manifest.lock */,
+				45347B3C2D0D97E700FCD57B /* Sources */,
+				45347B3D2D0D97E700FCD57B /* Frameworks */,
+				45347B3E2D0D97E700FCD57B /* Resources */,
+				21884F0C44A6CB2F75EF53F3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				45347B422D0D97E700FCD57B /* InstantMessenger */,
+			);
+			name = InstantMessenger;
+			productName = InstantMessenger;
+			productReference = 45347B402D0D97E700FCD57B /* InstantMessenger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45347B4F2D0D97E700FCD57B /* InstantMessengerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45347B672D0D97E700FCD57B /* Build configuration list for PBXNativeTarget "InstantMessengerTests" */;
+			buildPhases = (
+				1ED86A47A6A6D0022B141645 /* [CP] Check Pods Manifest.lock */,
+				45347B4C2D0D97E700FCD57B /* Sources */,
+				45347B4D2D0D97E700FCD57B /* Frameworks */,
+				45347B4E2D0D97E700FCD57B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45347B522D0D97E700FCD57B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				45347B532D0D97E700FCD57B /* InstantMessengerTests */,
+			);
+			name = InstantMessengerTests;
+			productName = InstantMessengerTests;
+			productReference = 45347B502D0D97E700FCD57B /* InstantMessengerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45347B592D0D97E700FCD57B /* InstantMessengerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45347B6A2D0D97E700FCD57B /* Build configuration list for PBXNativeTarget "InstantMessengerUITests" */;
+			buildPhases = (
+				7D017ED85E7ED5BA9E0A236B /* [CP] Check Pods Manifest.lock */,
+				45347B562D0D97E700FCD57B /* Sources */,
+				45347B572D0D97E700FCD57B /* Frameworks */,
+				45347B582D0D97E700FCD57B /* Resources */,
+				F7CC31F1BAFB2B8E09081A40 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45347B5C2D0D97E700FCD57B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				45347B5D2D0D97E700FCD57B /* InstantMessengerUITests */,
+			);
+			name = InstantMessengerUITests;
+			productName = InstantMessengerUITests;
+			productReference = 45347B5A2D0D97E700FCD57B /* InstantMessengerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45347B382D0D97E700FCD57B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					45347B3F2D0D97E700FCD57B = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					45347B4F2D0D97E700FCD57B = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 45347B3F2D0D97E700FCD57B;
+					};
+					45347B592D0D97E700FCD57B = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 45347B3F2D0D97E700FCD57B;
+					};
+				};
+			};
+			buildConfigurationList = 45347B3B2D0D97E700FCD57B /* Build configuration list for PBXProject "InstantMessenger" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45347B372D0D97E700FCD57B;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				45347B8D2D0D9ED100FCD57B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 45347B412D0D97E700FCD57B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45347B3F2D0D97E700FCD57B /* InstantMessenger */,
+				45347B4F2D0D97E700FCD57B /* InstantMessengerTests */,
+				45347B592D0D97E700FCD57B /* InstantMessengerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45347B3E2D0D97E700FCD57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45347B6E2D0D992900FCD57B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45347B4E2D0D97E700FCD57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45347B582D0D97E700FCD57B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ED86A47A6A6D0022B141645 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstantMessengerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21884F0C44A6CB2F75EF53F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstantMessenger/Pods-InstantMessenger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstantMessenger/Pods-InstantMessenger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstantMessenger/Pods-InstantMessenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60AE87BDFE837D8824CB4FDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstantMessenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D017ED85E7ED5BA9E0A236B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstantMessenger-InstantMessengerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7CC31F1BAFB2B8E09081A40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstantMessenger-InstantMessengerUITests/Pods-InstantMessenger-InstantMessengerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstantMessenger-InstantMessengerUITests/Pods-InstantMessenger-InstantMessengerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstantMessenger-InstantMessengerUITests/Pods-InstantMessenger-InstantMessengerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45347B3C2D0D97E700FCD57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45347B4C2D0D97E700FCD57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45347B562D0D97E700FCD57B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45347B522D0D97E700FCD57B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45347B3F2D0D97E700FCD57B /* InstantMessenger */;
+			targetProxy = 45347B512D0D97E700FCD57B /* PBXContainerItemProxy */;
+		};
+		45347B5C2D0D97E700FCD57B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45347B3F2D0D97E700FCD57B /* InstantMessenger */;
+			targetProxy = 45347B5B2D0D97E700FCD57B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		45347B622D0D97E700FCD57B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45347B632D0D97E700FCD57B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45347B652D0D97E700FCD57B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2515FF2CB0B595C9D33A8C82 /* Pods-InstantMessenger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"InstantMessenger/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ3AGLY4X9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = YoannTourtellier.InstantMessenger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45347B662D0D97E700FCD57B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA30E2896BC44C0CF8D7CFE5 /* Pods-InstantMessenger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"InstantMessenger/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ3AGLY4X9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = YoannTourtellier.InstantMessenger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		45347B682D0D97E700FCD57B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA4F3679F6D33CFB4D60A1DB /* Pods-InstantMessengerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3AGLY4X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = YoannTourtellier.InstantMessengerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstantMessenger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InstantMessenger";
+			};
+			name = Debug;
+		};
+		45347B692D0D97E700FCD57B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46729FC76599ACD55B53B43D /* Pods-InstantMessengerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3AGLY4X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = YoannTourtellier.InstantMessengerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InstantMessenger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InstantMessenger";
+			};
+			name = Release;
+		};
+		45347B6B2D0D97E700FCD57B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1465DEFD870262F518D7A439 /* Pods-InstantMessenger-InstantMessengerUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3AGLY4X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = YoannTourtellier.InstantMessengerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InstantMessenger;
+			};
+			name = Debug;
+		};
+		45347B6C2D0D97E700FCD57B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A24BA545C877968547E41D9B /* Pods-InstantMessenger-InstantMessengerUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3AGLY4X9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = YoannTourtellier.InstantMessengerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InstantMessenger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45347B3B2D0D97E700FCD57B /* Build configuration list for PBXProject "InstantMessenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45347B622D0D97E700FCD57B /* Debug */,
+				45347B632D0D97E700FCD57B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45347B642D0D97E700FCD57B /* Build configuration list for PBXNativeTarget "InstantMessenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45347B652D0D97E700FCD57B /* Debug */,
+				45347B662D0D97E700FCD57B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45347B672D0D97E700FCD57B /* Build configuration list for PBXNativeTarget "InstantMessengerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45347B682D0D97E700FCD57B /* Debug */,
+				45347B692D0D97E700FCD57B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45347B6A2D0D97E700FCD57B /* Build configuration list for PBXNativeTarget "InstantMessengerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45347B6B2D0D97E700FCD57B /* Debug */,
+				45347B6C2D0D97E700FCD57B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45347B8D2D0D9ED100FCD57B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+	};
+	rootObject = 45347B382D0D97E700FCD57B /* Project object */;
+}
