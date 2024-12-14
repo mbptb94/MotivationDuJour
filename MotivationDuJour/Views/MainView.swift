@@ -5,8 +5,8 @@ struct MainView: View {
     @State private var favoriteQuotes: [Quote] = [] // Liste des citations favorites
     private let quotes = QuoteLoader.loadQuotes()
 
-    @State private var rotation: Double = 0 // Propriété pour gérer la rotation de la citation
-    @State private var isRotating: Bool = false // Propriété pour contrôler l'état de la rotation
+    @State private var rotationY: Double = 0 // Gestion de l'angle de retournement
+    @State private var isFlipping: Bool = false // État du retournement
 
     var body: some View {
         NavigationView {
@@ -23,70 +23,68 @@ struct MainView: View {
                 VStack {
                     Spacer()
                     if let quote = currentQuote {
-                        // Affichage de la citation avec animation de rotation
-                        Text("“\(quote.quote)”")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding()
-                            .multilineTextAlignment(.center)
-                            .rotation3DEffect(
-                                .degrees(rotation),
-                                axis: (x: 0, y: 0, z: 1) // Rotation autour de l'axe Z
-                            )
-                            .animation(.easeInOut(duration: 0.5), value: rotation) // Animation fluide de la rotation
-                        
-                        // Affichage de l'auteur avec la même rotation
-                        Text("- \(quote.author)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                            .padding(.top, 8)
-                            .rotation3DEffect(
-                                .degrees(rotation),
-                                axis: (x: 0, y: 0, z: 1) // Rotation autour de l'axe Z pour l'auteur
-                            )
-                            .animation(.easeInOut(duration: 0.5), value: rotation) // Animation fluide de la rotation
-                        
-                        Spacer()
+                        VStack(spacing: 8) {
+                            // Citation
+                            Text("“\(quote.quote)”")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding()
+                                .multilineTextAlignment(.center)
 
-                        // Masquer l'HStack pendant la rotation
-                        if !isRotating {
-                            HStack {
-                                Spacer()
-
-                                // Bouton de partage
-                                Button(action: {
-                                    shareQuote(quote: "“\(quote.quote)” - \(quote.author)")
-                                }) {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .foregroundColor(.blue)
-                                        .padding()
-                                }
-
-                                // Bouton favori (cœur)
-                                Button(action: {
-                                    if let quote = currentQuote {
-                                        favoriteQuotes.append(quote) // Ajoute la citation aux favoris
-                                    }
-                                }) {
-                                    Image(systemName: "heart.fill") // Cœur toujours rempli
-                                        .foregroundColor(.red) // Toujours rouge
-                                        .padding()
-                                }
-
-                                // Bouton de favoris (icône opticaldiscdrive.fill)
-                                NavigationLink(destination: FavorisView(favoriteQuotes: $favoriteQuotes)) {
-                                    Image(systemName: "opticaldiscdrive.fill") // Icône de favoris
-                                        .foregroundColor(.blue)
-                                        .padding()
-                                }
-                                
-                                Spacer()
-                            }
-                            .padding(.top, 8)
+                            // Auteur
+                            Text("- \(quote.author)")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
                         }
+                        .rotation3DEffect(
+                            .degrees(rotationY),
+                            axis: (x: 0, y: 1, z: 0) // Retournement horizontal
+                        )
+                        .opacity(isFlipping ? 0 : 1) // Masquer brièvement le texte pendant le changement
+                        .animation(.easeInOut(duration: 0.5), value: rotationY) // Animation fluide
                     } else {
                         Text("Aucune citation disponible.")
                             .padding()
+                    }
+                    Spacer()
+
+                    // Boutons d'actions
+                    if !isFlipping {
+                        HStack {
+                            Spacer()
+
+                            // Bouton de partage
+                            Button(action: {
+                                if let quote = currentQuote {
+                                    shareQuote(quote: "“\(quote.quote)” - \(quote.author)")
+                                }
+                            }) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.blue)
+                                    .padding()
+                            }
+
+                            // Bouton favori (cœur)
+                            Button(action: {
+                                if let quote = currentQuote {
+                                    favoriteQuotes.append(quote) // Ajoute la citation aux favoris
+                                }
+                            }) {
+                                Image(systemName: "heart.fill")
+                                    .foregroundColor(.red)
+                                    .padding()
+                            }
+
+                            // Bouton pour afficher les favoris
+                            NavigationLink(destination: FavorisView(favoriteQuotes: $favoriteQuotes)) {
+                                Image(systemName: "opticaldiscdrive.fill")
+                                    .foregroundColor(.blue)
+                                    .padding()
+                            }
+
+                            Spacer()
+                        }
+                        .padding(.top, 8)
                     }
                 }
                 .frame(maxWidth: .infinity, minHeight: 300) // Fixe une hauteur minimale pour éviter que le bouton ne bouge
@@ -99,7 +97,7 @@ struct MainView: View {
                     Text("Nouvelle citation")
                         .font(.headline)
                         .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing)) // Dégradé pour le fond
+                        .background(LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .leading, endPoint: .trailing))
                         .foregroundColor(.white)
                         .cornerRadius(12)
                         .shadow(color: .blue, radius: 10, x: 0, y: 5)
@@ -108,27 +106,34 @@ struct MainView: View {
             }
             .onAppear(perform: showRandomQuote)
             .padding()
-            .navigationTitle("Motivation du Jour") // Titre pour la barre de navigation
+            .navigationTitle("Motivation du Jour")
         }
     }
 
     private func showRandomQuote() {
-        // Ajouter une animation lors de la mise à jour de la citation avec une rotation
+        // Lancer l'effet de retournement
         withAnimation {
-            isRotating = true // Démarrer la rotation
-            rotation += 360 // Rotation complète de 360 degrés à chaque nouvelle citation
+            rotationY += 180 // Retournement à 90 degrés
+            isFlipping = true // Empêche l'interaction pendant l'animation
         }
 
-        // Attendre la fin de la rotation avant d'afficher la nouvelle citation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        // Attendre l'effet avant de changer la citation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            // Mise à jour de la citation après la moitié du retournement
             currentQuote = quotes.randomElement()
-            isRotating = false // Fin de la rotation
+
+            // Compléter le retournement
+            withAnimation {
+                rotationY += 180 // Finaliser jusqu'à 180 degrés
+                rotationY = rotationY.truncatingRemainder(dividingBy: 360) // Réinitialisation pour éviter l'inversion
+                isFlipping = false // Réactiver l'interaction
+            }
         }
     }
 
     private func shareQuote(quote: String) {
         let activityVC = UIActivityViewController(activityItems: [quote], applicationActivities: nil)
-        
+
         // Trouver la scène active pour présenter le UIActivityViewController
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let rootViewController = windowScene.windows.first?.rootViewController {
